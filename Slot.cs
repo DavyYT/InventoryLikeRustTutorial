@@ -10,19 +10,25 @@ public class Slot : MonoBehaviour
     Sprite defaultSprite;
     Text amountText;
 
-    private void Start()
+    public void CustomStart()
     {
         defaultSprite = GetComponent<Image>().sprite;
         amountText = transform.GetChild(0).GetComponent<Text>();
         amountText.text = "";
     }
 
-    private void Update()
+    public void DropItem()
     {
-        CheckForItem();
+        if(slotsItem)
+        {
+            slotsItem.transform.parent = null;
+            slotsItem.gameObject.SetActive(true);
+            slotsItem.transform.position = Vector3.zero;
+        }
     }
 
-    private void CheckForItem()
+
+    public void CheckForItem()
     {
         if(transform.childCount > 1)
         {

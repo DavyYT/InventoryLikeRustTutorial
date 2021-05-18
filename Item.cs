@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    public string equipmentType;
+    public int equipmentIndex;
+
     public Sprite itemSprite;
 
     public int amountInStack = 1;
